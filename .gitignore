@@ -1,0 +1,7 @@
+node_modules/
+.env
+*.log
+npm-debug.log*
+# If you have any sensitive data files (like JSON files for posts)
+# that should NOT be public, list them here, e.g.:
+# posts/*.json

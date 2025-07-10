@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        <%= title || "My Blog" %>
+    </title>
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+
+<body>
+<h1>All Posts</h1>
+
+<a class="new-post-link" href="/new">+ New Post</a>
+
+<ul class="posts-list">
+  <% posts.forEach(p => { %>
+  <li class="post-item">
+    <a class="post-title" href="/posts/<%= p.slug %>">
+      <%= p.title %>
+    </a>
+    <div class="post-actions">
+      <a class="edit-link" href="/edit/<%= p.slug %>">Edit</a>
+      <form action="/delete/<%= p.slug %>" method="POST" onsubmit="return confirm('Delete this post?')">
+        <button type="submit">Delete</button>
+      </form>
+    </div>
+  </li>
+  <% }) %>
+</ul>
+
+
+
+
+</body>
+
+</html>

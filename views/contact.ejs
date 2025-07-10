@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - My Blog</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <a href="/" class="blog-logo">My Blog</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact" class="active">Contact</a></li> </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="/new" class="new-post-btn">+ New Post</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="single-post-content"> <h1>Contact Us</h1>
+        <p>Have questions, feedback, or just want to say hello? Feel free to reach out!</p>
+        <p>You can contact me via:</p>
+        <ul>
+            <li><strong>Email:</strong> <a href="mailto:your.email@example.com">your.email@example.com</a></li>
+            <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/yourprofile" target="_blank">Your LinkedIn Profile</a></li>
+            </ul>
+        <p>I look forward to hearing from you!</p>
+    </div>
+
+    <footer class="main-footer">
+        <p>&copy; <%= new Date().getFullYear() %> My Blog. All rights reserved.</p>
+    </footer>
+</body>
+</html>

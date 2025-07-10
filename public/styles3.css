@@ -1,0 +1,750 @@
+General Body & Typography
+body {
+    font-family: 'Roboto', sans-serif; /* Using Roboto as a modern sans-serif font */
+    background-color: #f0f2f5; /* Light grey background for the whole page */
+    color: #333;
+    margin: 0;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column; /* Allows footer to stick to bottom if main content is short */
+    min-height: 100vh; /* Ensures body takes full viewport height */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif; /* A serif font for titles for elegance */
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+h1.page-title {
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+    text-align: center; /* Center the main page title */
+    color: #2c3e50;
+    padding-top: 20px; /* Space from header */
+}
+
+a {
+    color: #2980b9; /* A professional blue for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #3498db; /* Slightly lighter blue on hover */
+    text-decoration: underline;
+}
+
+/* ------------------------------------- */
+/* HEADER STYLING */
+/* ------------------------------------- */
+.main-header {
+    background-color: #2c3e50; /* Darker background for the header */
+    color: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 100%;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* Limit header width */
+    margin: 0 auto;
+}
+
+.blog-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 0;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.main-nav a {
+    color: white;
+    font-weight: 500;
+    font-size: 1.05rem;
+    padding: 0.5rem 0;
+    position: relative; /* For underline effect */
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after { /* Add 'active' class to current page link */
+    width: 100%;
+}
+
+.header-actions .new-post-btn {
+    background-color: #2ecc71; /* Green for "New Post" button */
+    color: white;
+    padding: 0.7rem 1.2rem;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.header-actions .new-post-btn:hover {
+    background-color: #27ae60;
+    transform: translateY(-2px); /* Slight lift effect */
+    text-decoration: none; /* Remove underline on hover */
+}
+
+
+/* ------------------------------------- */
+/* MAIN CONTENT LAYOUT */
+/* ------------------------------------- */
+.container {
+    display: flex;
+    gap: 30px; /* Space between main content and sidebar */
+    max-width: 1200px; /* Overall max width for the page content */
+    margin: 30px auto; /* Center the container with space from top/bottom */
+    padding: 0 20px; /* Padding on sides for smaller screens */
+    flex-grow: 1; /* Allows container to take available space */
+}
+
+.main-content {
+    flex: 3; /* Main content takes 3 parts of available space */
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.sidebar {
+    flex: 1; /* Sidebar takes 1 part of available space */
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* ------------------------------------- */
+/* POSTS GRID (Main Content) */
+/* ------------------------------------- */
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid columns */
+    gap: 30px; /* Space between post cards */
+    padding: 20px 0; /* Vertical padding within the grid section */
+}
+
+.post-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden; /* Ensures image corners are rounded with card */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column; /* Stack image and content vertically */
+}
+
+.post-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12); /* Enhanced shadow */
+}
+
+.post-card-image-link {
+    display: block; /* Make the link block-level */
+    height: 180px; /* Fixed height for consistent image size */
+    overflow: hidden; /* Hide overflow if image doesn't perfectly fit */
+}
+
+.post-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Covers the area, cropping if necessary */
+    transition: transform 0.5s ease;
+}
+
+.post-card:hover .post-card-image {
+    transform: scale(1.05); /* Slight zoom on image on card hover */
+}
+
+.post-card-content {
+    padding: 20px;
+    flex-grow: 1; /* Allows content area to expand */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes actions to bottom */
+}
+
+.post-card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 0.75rem;
+    display: block; /* Make it block for margin */
+}
+
+.post-card-title:hover {
+    color: #3498db; /* Link hover effect */
+    text-decoration: none; /* Remove underline */
+}
+
+.post-card-excerpt {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 1rem;
+    flex-grow: 1; /* Allows excerpt to take space */
+}
+
+.post-card-actions {
+    display: flex;
+    justify-content: flex-end; /* Align actions to the right */
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Edit link styling within post card */
+.post-card-actions .edit-link {
+    color: #f39c12; /* Orange for edit */
+    font-weight: 600;
+    font-size: 0.9em;
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: 1px solid #f39c12;
+    transition: all 0.3s ease;
+}
+
+.post-card-actions .edit-link:hover {
+    background-color: #f39c12;
+    color: white;
+    text-decoration: none;
+}
+
+/* Delete button styling within post card */
+.post-card-actions .delete-btn { /* Renamed from 'button' to avoid conflicts */
+    background-color: #e74c3c;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+    align-self: flex-start; /* Ensure button doesn't stretch */
+}
+
+.post-card-actions .delete-btn:hover {
+    background-color: #c0392b;
+}
+
+/* ------------------------------------- */
+/* SIDEBAR STYLING */
+/* ------------------------------------- */
+.sidebar-section {
+    background-color: #fdfdfd; /* Slightly different background for sidebar sections */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px; /* Space between sections */
+    box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+}
+
+.sidebar-section h2 {
+    font-size: 1.6rem;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.categories-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.categories-section li {
+    margin-bottom: 0.8rem;
+}
+
+.categories-section a {
+    display: block;
+    padding: 8px 12px;
+    background-color: #ecf0f1; /* Light grey for category tags */
+    color: #555;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.categories-section a:hover {
+    background-color: #dbe2e4;
+    color: #333;
+    text-decoration: none;
+}
+
+.search-section .search-box {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden; /* Contains children within rounded border */
+}
+
+.search-section input[type="text"] {
+    flex: 1;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1em;
+    outline: none; /* Remove outline on focus */
+    box-sizing: border-box; /* Ensure padding is included */
+}
+
+.search-section input[type="text"]:focus {
+    box-shadow: inset 0 0 0 2px #2980b9; /* Blue inner shadow on focus */
+}
+
+.search-section .search-icon {
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    display: flex; /* For icon centering if needed */
+    align-items: center;
+    justify-content: center;
+}
+
+.search-section .search-icon:hover {
+    background-color: #2573a4;
+}
+
+.about-section p {
+    font-size: 0.95em;
+    color: #666;
+    text-align: center;
+}
+
+/* ------------------------------------- */
+/* FOOTER STYLING */
+/* ------------------------------------- */
+.main-footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: auto; /* Pushes footer to the bottom */
+}
+
+.main-footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+
+/* ------------------------------------- */
+/* PREVIOUSLY EXISTING STYLES - ADJUSTED */
+/* ------------------------------------- */
+
+/* Remove old body background as it's now global */
+/* body {
+    background: linear-gradient(to bottom right, #fdfbfb, #f1f2f6);
+} */
+
+/* These are no longer needed as the layout is handled by the new .container and .posts-grid */
+/* ul.posts-list {
+    max-width: 650px;
+    margin: 0.5rem auto;
+    padding-left: 0;
+    list-style: none;
+} */
+
+/* ul.posts-list li.post-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.1rem 3rem;
+    border-bottom: 1px solid #e0e0e0;
+    transition: background 0.2s;
+}
+
+ul.posts-list li.post-item:hover {
+    background: rgba(0,0,0,0.03);
+}
+
+.post-item .post-title {
+    flex: 1;
+    color: #2c3e50;
+    font-weight: 600;
+    text-decoration: none;
+} */
+
+/* .new-post-link is replaced by .new-post-btn in the header */
+/* .new-post-link { ... } */
+
+
+/* Existing form styling - make sure it's applied correctly to new and edit pages */
+/* The .new-post-container styles should still work for your new.ejs and edit.ejs */
+
+.new-post-container {
+    max-width: 700px; /* Slightly wider for forms */
+    margin: 40px auto; /* Centre horizontally & add top+bottom space */
+    padding: 30px;
+    background: #ffffff; /* box background */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Stronger shadow for forms */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.new-post-container h1 {
+    text-align: center;
+    font-size: 2.2rem; /* Slightly smaller for form titles */
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+}
+
+.new-post-container .post-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+.new-post-container .post-form label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.25rem; /* Space between label and input */
+}
+
+.new-post-container .post-form input[type="text"],
+.new-post-container .post-form textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.05rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif; /* Use Roboto for input text too */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.new-post-container .post-form input[type="text"]:focus,
+.new-post-container .post-form textarea:focus {
+    border-color: #2980b9;
+    box-shadow: 0 0 0 3px rgba(41, 128, 185, 0.2); /* Focus ring */
+    outline: none;
+}
+
+.new-post-container .post-form textarea {
+    min-height: 150px; /* Make textarea taller */
+    resize: vertical;
+}
+
+.new-post-container .post-form button[type="submit"] {
+    align-self: center; /* Center the button */
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    background-color: #2ecc71; /* Green submit button */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 1rem; /* Space from textarea */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.new-post-container .post-form button[type="submit"]:hover {
+    background-color: #27ae60;
+    transform: translateY(-2px);
+}
+
+/* Specific styling for post.ejs (single post view) */
+.single-post-content {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.single-post-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #2c3e50;
+}
+
+.single-post-content div {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
+}
+
+/* Remove old global button styles that conflict with specific ones */
+/* button { ... } */
+/* button:hover { ... } */
+
+/* Remove old list styles as they're replaced by post-cards */
+/* ul { ... } */
+/* li { ... } */
+/* .post-link { ... } */
+/* .edit-link { ... } */ /* Now specifically handled within post-card-actions */
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 992px) {
+    .container {
+        flex-direction: column; /* Stack main content and sidebar vertically */
+        padding: 0 15px;
+        margin-top: 20px;
+    }
+    .main-content, .sidebar {
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Lighter shadow for stacked elements */
+    }
+    .posts-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust grid for smaller screens */
+        gap: 20px;
+    }
+    .main-header .header-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .main-nav ul {
+        flex-wrap: wrap; /* Allow navigation items to wrap */
+        justify-content: center;
+    }
+    h1.page-title {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header {
+        padding: 0.8rem 1rem;
+    }
+    .header-content {
+        gap: 10px;
+    }
+    .blog-logo {
+        font-size: 1.5rem;
+    }
+    .main-nav ul {
+        gap: 1rem;
+    }
+    .new-post-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+    .main-content, .sidebar, .new-post-container, .single-post-content {
+        padding: 15px;
+    }
+    .post-card-image-link {
+        height: 150px; /* Smaller image height on smaller screens */
+    }
+    .post-card-title {
+        font-size: 1.25rem;
+    }
+    .post-card-excerpt {
+        font-size: 0.9em;
+    }
+    .sidebar-section h2 {
+        font-size: 1.4rem;
+    }
+    .new-post-container h1 {
+        font-size: 1.8rem;
+    }
+    .single-post-content h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1.page-title {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+    .posts-grid {
+        grid-template-columns: 1fr; /* Single column on very small screens */
+    }
+    .post-card-content {
+        padding: 15px;
+    }
+    .post-card-title {
+        font-size: 1.1rem;
+    }
+    .post-card-excerpt {
+        font-size: 0.85em;
+    }
+    .post-card-actions {
+        flex-direction: column; /* Stack buttons */
+        align-items: stretch; /* Stretch buttons to full width */
+    }
+    .post-card-actions .edit-link,
+    .post-card-actions .delete-btn {
+        text-align: center;
+        width: 100%; /* Full width buttons */
+    }
+    .search-section .search-box {
+        flex-direction: column;
+    }
+    .search-section .search-icon {
+        width: 100%;
+        border-radius: 0 0 5px 5px; /* Adjust border radius for stacked button */
+    }
+    .search-section input[type="text"] {
+        border-radius: 5px 5px 0 0;
+    }
+    .new-post-container, .single-post-content {
+        margin: 20px auto;
+        padding: 15px;
+    }
+    .new-post-container .post-form button[type="submit"] {
+        width: 100%;
+    }
+}
+/* Add this to your styles.css */
+
+.sidebar-section.categories-section a.active-category {
+    background-color: #2980b9; /* A distinct background for the active category */
+    color: white;
+    font-weight: 700;
+}
+
+.sidebar-section.categories-section a.active-category:hover {
+    background-color: #2573a4; /* Slightly darker on hover */
+    color: white;
+    text-decoration: none;
+}
+
+/* Optional: Style for the "No posts found" message */
+.no-posts-message {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+    margin-top: 50px;
+    font-size: 1.1em;
+}
+/* Add this to your styles.css */
+.main-nav a.active {
+    font-weight: 700;
+    /* You might want a different color or a stronger underline */
+    /* For example, to make the underline appear */
+    /* background-color: white; */ /* This might interfere with text color */
+}
+.main-nav a.active::after { /* To ensure the underline is active */
+    width: 100%;
+}
+/* Add this to your styles.css */
+
+.single-post-container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.single-post-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.post-category {
+    text-align: center;
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 20px;
+}
+.post-category a {
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: 500;
+}
+.post-category a:hover {
+    text-decoration: underline;
+}
+
+.post-detail-image {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Ensures it takes full width and centers if image is smaller */
+    margin: 0 auto 30px auto; /* Center image and add spacing */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post-content-body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 40px;
+    white-space: pre-wrap; /* Preserve whitespace and line breaks for content */
+}
+
+/* Actions for single post page */
+.post-actions-single {
+    display: flex;
+    justify-content: center; /* Center the buttons */
+    gap: 20px; /* Space between buttons */
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.post-actions-single .edit-link,
+.post-actions-single .delete-btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.post-actions-single .edit-link {
+    background-color: #2980b9;
+    color: white;
+    border: none;
+}
+
+.post-actions-single .edit-link:hover {
+    background-color: #2573a4;
+}
+
+.post-actions-single .delete-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+}
+
+.post-actions-single .delete-btn:hover {
+    background-color: #c0392b;
+}
+
+
+

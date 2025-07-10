@@ -1,0 +1,179 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body> -->
+
+   <!-- ADD THIS WRAPPER -->
+  <!-- <div class="new-post-container">
+
+  <h1>Create a New Post</h1>
+
+  <form action="/new" method="POST" class="post-form">
+    <label for="title">Title</label>
+    <input type="text" name="title" id="title" required>
+
+    <label for="content">Content</label>
+    <textarea name="content" id="content" rows="5" required></textarea>
+
+    <button type="submit">Publish</button>
+  </form>
+
+  </div> -->
+  <!-- / new-post-container -->
+
+<!-- </body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="new-post-container">
+
+  <h1>Create a New Post</h1>
+
+  <form action="/new" method="POST" class="post-form">
+    <label for="title">Title</label>
+    <input type="text" name="title" id="title" required>
+
+    <label for="content">Content</label>
+    <textarea name="content" id="content" rows="5" required></textarea>
+
+    <button type="submit">Publish</button>
+  </form>
+
+  </div>
+
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="new-post-container">
+
+  <h1>Create a New Post</h1>
+
+  <form action="/new" method="POST" class="post-form">
+    <label for="title">Title</label>
+    <input type="text" name="title" id="title" required>
+
+    <label for="content">Content</label>
+    <textarea name="content" id="content" rows="5" required></textarea>
+
+    <label for="category">Category</label>
+    <select name="category" id="category" required>
+        <option value="">Select a Category</option>
+        <option value="Random">Random</option> <% availableCategories.forEach(cat => { %>
+            <option value="<%= cat %>"><%= cat %></option>
+        <% }) %>
+    </select>
+
+    <button type="submit">Publish</button>
+  </form>
+
+  </div>
+
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="new-post-container">
+
+  <h1>Create a New Post</h1>
+
+  <form action="/new" method="POST" class="post-form">
+    <label for="title">Title</label>
+    <input type="text" name="title" id="title" required>
+
+    <label for="content">Content</label>
+    <textarea name="content" id="content" rows="5" required></textarea>
+
+    <label for="category">Category</label>
+    <select name="category" id="category" required>
+        <option value="">Select a Category</option>
+        <option value="Random">Random</option>
+        <% availableCategories.forEach(cat => { %>
+            <option value="<%= cat %>"><%= cat %></option>
+        <% }) %>
+    </select>
+
+    <div class="image-input-field"> <label for="imageUrl">Image URL (Optional - leave empty for a random image):</label>
+        <input type="url" name="imageUrl" id="imageUrl" placeholder="e.g., https://unsplash.com/photos/abc.jpg">
+    </div>
+
+    <button type="submit">Publish</button>
+  </form>
+
+  </div>
+
+  </body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="new-post-container">
+
+  <h1>Create a New Post</h1>
+
+  <form action="/new" method="POST" class="post-form">
+    <label for="title">Title</label>
+    <input type="text" name="title" id="title" required>
+
+    <label for="content">Content</label>
+    <textarea name="content" id="content" rows="5" required></textarea>
+
+    <label for="category">Category</label>
+    <select name="category" id="category" required>
+        <option value="">Select a Category</option>
+        <option value="Random">Random</option>
+        <% availableCategories.forEach(cat => { %>
+            <option value="<%= cat %>"><%= cat %></option>
+        <% }) %>
+    </select>
+
+    <div class="image-input-field">
+        <label for="imageUrl">Image URL (Optional - leave empty for a random image):</label>
+        <input type="url" name="imageUrl" id="imageUrl" placeholder="e.g., https://unsplash.com/photos/abc.jpg">
+    </div>
+
+    <button type="submit">Publish</button>
+  </form>
+
+  </div>
+
+</body>
+</html>

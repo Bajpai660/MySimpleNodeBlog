@@ -1,0 +1,189 @@
+<!-- <!DOCTYPE html> -->
+<!-- <html> -->
+<!-- <head><title>Edit <%= post.title %></title> -->
+<!-- <link rel="stylesheet" href="/styles.css"> -->
+<!-- </head> -->
+
+<!-- <body> -->
+   <!-- ADD THIS WRAPPER -->
+  <!-- <div class="new-post-container"> -->
+
+  <!-- <h1>Edit Post</h1> -->
+  <!-- <form action="/edit/<%= post.slug %>" method="POST" class="post-form"> -->
+    <!-- <input name="title" value="<%= post.title %>" required /> -->
+    <!-- <textarea name="content" required><%= post.content %></textarea> -->
+    <!-- <button type="submit">Save Changes</button> -->
+  <!-- </form> -->
+
+    <!-- </div> -->
+  <!-- / new-post-container -->
+<!-- </body> -->
+<!-- </html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head><title>Edit <%= post.title %></title>
+<link rel="stylesheet" href="/styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="new-post-container">
+
+  <h1>Edit Post</h1>
+  <form action="/edit/<%= post.slug %>" method="POST" class="post-form">
+    <label for="title">Title</label>
+    <input name="title" id="title" value="<%= post.title %>" required />
+
+    <label for="content">Content</label>
+    <textarea name="content" id="content" required><%= post.content %></textarea>
+
+    <% if (post.image) { %>
+        <label>Current Image</label>
+        <img src="<%= post.image %>" alt="Current Post Image" style="max-width: 100%; height: auto; border-radius: 4px; margin-top: 10px;">
+    <% } %>
+
+    <button type="submit">Save Changes</button>
+  </form>
+
+  </div>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head><title>Edit <%= post.title %></title>
+<link rel="stylesheet" href="/styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="new-post-container">
+
+  <h1>Edit Post</h1>
+  <form action="/edit/<%= post.slug %>" method="POST" class="post-form">
+    <label for="title">Title</label>
+    <input name="title" id="title" value="<%= post.title %>" required />
+
+    <label for="content">Content</label>
+    <textarea name="content" id="content" required><%= post.content %></textarea>
+
+    <label for="category">Category</label>
+    <select name="category" id="category" required>
+        <option value="">Select a Category</option>
+        <option value="Random">Random</option>
+        <% availableCategories.forEach(cat => { %>
+            <option value="<%= cat %>" <%= post.category === cat ? 'selected' : '' %>><%= cat %></option>
+        <% }) %>
+    </select>
+
+    <% if (post.image) { %>
+        <label>Current Image</label>
+        <img src="<%= post.image %>" alt="Current Post Image" style="max-width: 100%; height: auto; border-radius: 4px; margin-top: 10px;">
+    <% } %>
+
+    <button type="submit">Save Changes</button>
+  </form>
+
+  </div>
+</body>
+</html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head><title>Edit <%= post.title %></title>
+<link rel="stylesheet" href="/styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="new-post-container">
+
+  <h1>Edit Post</h1>
+  <form action="/edit/<%= post.slug %>" method="POST" class="post-form">
+    <label for="title">Title</label>
+    <input name="title" id="title" value="<%= post.title %>" required />
+
+    <label for="content">Content</label>
+    <textarea name="content" id="content" rows="5" required><%= post.content %></textarea>
+
+    <label for="category">Category</label>
+    <select name="category" id="category" required>
+        <option value="">Select a Category</option>
+        <option value="Random">Random</option>
+        <% availableCategories.forEach(cat => { %>
+            <option value="<%= cat %>" <%= post.category === cat ? 'selected' : '' %>><%= cat %></option>
+        <% }) %>
+    </select>
+
+    <div class="image-input-field"> <label for="imageUrl">Image URL (Optional - leave empty to keep current or for a random image):</label>
+        <input type="url" name="imageUrl" id="imageUrl" placeholder="e.g., https://unsplash.com/photos/abc.jpg"
+               value="<%= post.image || '' %>">
+    </div>
+
+    <% if (post.image) { %>
+        <label style="margin-top: 20px;">Current Image</label>
+        <img src="<%= post.image %>" alt="Current Post Image" style="max-width: 100%; height: auto; border-radius: 4px; margin-top: 10px;">
+    <% } %>
+
+
+    <button type="submit">Save Changes</button>
+  </form>
+
+  </div>
+
+  </body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head><title>Edit <%= post.title %></title>
+<link rel="stylesheet" href="/styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="new-post-container">
+
+  <h1>Edit Post</h1>
+  <form action="/edit/<%= post.slug %>" method="POST" class="post-form">
+    <label for="title">Title</label>
+    <input name="title" id="title" value="<%= post.title %>" required />
+
+    <label for="content">Content</label>
+    <textarea name="content" id="content" rows="5" required><%= post.content %></textarea>
+
+    <label for="category">Category</label>
+    <select name="category" id="category" required>
+        <option value="">Select a Category</option>
+        <option value="Random">Random</option>
+        <% availableCategories.forEach(cat => { %>
+            <option value="<%= cat %>" <%= post.category === cat ? 'selected' : '' %>><%= cat %></option>
+        <% }) %>
+    </select>
+
+    <div class="image-input-field">
+        <label for="imageUrl">Image URL (Optional - leave empty to keep current or for a random image):</label>
+        <input type="url" name="imageUrl" id="imageUrl" placeholder="e.g., https://unsplash.com/photos/abc.jpg"
+               value="<%= post.image || '' %>">
+    </div>
+
+    <% if (post.image) { %>
+        <label style="margin-top: 20px;">Current Image</label>
+        <img src="<%= post.image %>" alt="Current Post Image" style="max-width: 100%; height: auto; border-radius: 4px; margin-top: 10px;">
+    <% } %>
+
+
+    <button type="submit">Save Changes</button>
+  </form>
+
+  </div>
+
+</body>
+</html>

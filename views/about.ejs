@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - My Blog</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <a href="/" class="blog-logo">My Blog</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about" class="active">About</a></li> <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="/new" class="new-post-btn">+ New Post</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="single-post-content"> <h1>About My Blog</h1>
+        <p>Welcome to My Blog! This platform is built as a learning project using Node.js, Express, and EJS. It's a simple space where thoughts, ideas, and experiences can be shared and explored.</p>
+        <p>I created this blog to practice web development skills, including server-side routing, templating, and basic data management. It's a work in progress, and I'm constantly learning and improving!</p>
+        <p>Thank you for visiting!</p>
+    </div>
+
+    <footer class="main-footer">
+        <p>&copy; <%= new Date().getFullYear() %> My Blog. All rights reserved.</p>
+    </footer>
+</body>
+</html>
